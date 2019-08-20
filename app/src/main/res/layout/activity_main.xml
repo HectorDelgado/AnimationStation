@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bkgd_spacey"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/imageViewLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/mImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/ic_launcher" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="32dp"
+        android:background="#DABAC3E0"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/startButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageViewLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <!-- ALPHA -->
+            <TextView
+                android:id="@+id/alphaTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alpha"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/alphaSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- ROTATION -->
+            <TextView
+                android:id="@+id/rotationTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rotation"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/rotationSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- SCALE -->
+            <TextView
+                android:id="@+id/scaleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scale"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/scaleSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- X POSITION -->
+            <TextView
+                android:id="@+id/xPositionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="X Position"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/xPositionSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Y POSITION -->
+            <TextView
+                android:id="@+id/yPositionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Y Position"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/yPositionSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:onClick="startButtonClicked"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
