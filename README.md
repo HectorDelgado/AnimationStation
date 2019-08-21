@@ -1,6 +1,6 @@
 # Animation Station
 
-## A simple native Android application that plays various user-selected animations.
+A simple native Android application that plays various user-selected animations.
 
 ## Screenshots
 ![Animation Station Screenshot 1](/_Screenshots/device-2019-08-21-115508.png)
