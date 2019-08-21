@@ -17,16 +17,17 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/mImageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/ic_launcher" />
+                android:id="@+id/mImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"
+                android:contentDescription="@string/imageView_contentDescription_mainImage"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@mipmap/ic_launcher" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -49,11 +50,11 @@
 
             <!-- ALPHA -->
             <TextView
-                android:id="@+id/alphaTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Alpha"
-                android:textSize="24sp" />
+                    android:id="@+id/alphaTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textView_text_alpha"
+                    android:textSize="24sp" />
 
             <androidx.appcompat.widget.AppCompatSeekBar
                 android:id="@+id/alphaSeekBar"
@@ -62,11 +63,11 @@
 
             <!-- ROTATION -->
             <TextView
-                android:id="@+id/rotationTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Rotation"
-                android:textSize="24sp" />
+                    android:id="@+id/rotationTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textView_text_rotation"
+                    android:textSize="24sp" />
 
             <androidx.appcompat.widget.AppCompatSeekBar
                 android:id="@+id/rotationSeekBar"
@@ -75,11 +76,11 @@
 
             <!-- SCALE -->
             <TextView
-                android:id="@+id/scaleTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Scale"
-                android:textSize="24sp" />
+                    android:id="@+id/scaleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textView_text_scale"
+                    android:textSize="24sp" />
 
             <androidx.appcompat.widget.AppCompatSeekBar
                 android:id="@+id/scaleSeekBar"
@@ -88,11 +89,11 @@
 
             <!-- X POSITION -->
             <TextView
-                android:id="@+id/xPositionTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="X Position"
-                android:textSize="24sp" />
+                    android:id="@+id/xPositionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textView_text_xPosition"
+                    android:textSize="24sp" />
 
             <androidx.appcompat.widget.AppCompatSeekBar
                 android:id="@+id/xPositionSeekBar"
@@ -101,11 +102,11 @@
 
             <!-- Y POSITION -->
             <TextView
-                android:id="@+id/yPositionTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Y Position"
-                android:textSize="24sp" />
+                    android:id="@+id/yPositionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textView_text_yPosition"
+                    android:textSize="24sp" />
 
             <androidx.appcompat.widget.AppCompatSeekBar
                 android:id="@+id/yPositionSeekBar"
@@ -115,13 +116,13 @@
     </androidx.core.widget.NestedScrollView>
 
     <Button
-        android:id="@+id/startButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:onClick="startButtonClicked"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+            android:id="@+id/startButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:onClick="startButtonClicked"
+            android:text="@string/button_text_animateMe"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

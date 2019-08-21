@@ -1,6 +1,5 @@
 package com.hectordelgado.animationstation
 
-import android.animation.Animator
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +11,19 @@ import android.widget.SeekBar
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 
+/**
+ * A simple application that lets users animate various properties of an ImageView.
+ *
+ * <p>Gathers data from various SeekBar widgets to animate common properties of the ImageView.
+ * The data is used in an ObjectAnimator which is then added to an AnimatorSet to play all
+ * animations simultaneously.
+ *
+ * Created on August 19, 2019.
+ * Copyright © $2019 Hector Delgado. All rights reserved.
+ *
+ * @author Hector Delgado
+ *
+ */
 class MainActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
 
     private var oldAlpha = 0f
@@ -70,9 +82,6 @@ class MainActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
 
         rotationSeekBar.max = 360
         scaleSeekBar.max = 150
-
-        rotationChanged = false
-        scaleChanged = false
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
@@ -80,59 +89,54 @@ class MainActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
 
         xPositionSeekBar.max = mConstraintLayout.measuredWidth - mImageView.measuredWidth
         yPositionSeekBar.max = imageViewLayout.measuredHeight - mImageView.measuredHeight
-
-        xPositionChanged = false
-        yPositionChanged = false
     }
 
     override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-        when (seekBar?.id) {
-            R.id.alphaSeekBar -> {
-                alphaChanged = true
-                oldAlpha = mImageView.alpha
-                newAlpha = progress.toFloat() / 100f
-                val newText = "Alpha $newAlpha"
-                alphaTextView.text = newText
-            }
-            R.id.rotationSeekBar -> {
-                rotationChanged = true
-                oldRotation = mImageView.rotation
-                newRotation = progress.toFloat()
-                val newText = "Rotation $newRotation"
-                rotationTextView.text = newText
-            }
-            R.id.scaleSeekBar -> {
-                scaleChanged = true
-                oldScale = mImageView.scaleX
-                newScale = progress.toFloat()/ 100f
-                val newText = "Scale $newScale"
-                scaleTextView.text = newText
-            }
-            R.id.xPositionSeekBar -> {
-                xPositionChanged = true
-                oldXPosition = mImageView.x
-                newXPosition = progress.toFloat()
-                val newText = "X Position $newXPosition"
-                xPositionTextView.text = newText
+        if (fromUser) {
+            when (seekBar?.id) {
+                R.id.alphaSeekBar -> {
+                    alphaChanged = true
+                    oldAlpha = mImageView.alpha
+                    newAlpha = progress.toFloat() / 100f
+                    val newText = "${resources.getString(R.string.textView_text_alpha)} $newAlpha"
+                    alphaTextView.text = newText
+                }
+                R.id.rotationSeekBar -> {
+                    rotationChanged = true
+                    oldRotation = mImageView.rotation
+                    newRotation = progress.toFloat()
+                    val newText = "${resources.getString(R.string.textView_text_rotation)} $newRotation"
+                    rotationTextView.text = newText
+                }
+                R.id.scaleSeekBar -> {
+                    scaleChanged = true
+                    oldScale = mImageView.scaleX
+                    newScale = progress.toFloat()/ 100f
+                    val newText = "${resources.getString(R.string.textView_text_scale)} $newScale"
+                    scaleTextView.text = newText
+                }
+                R.id.xPositionSeekBar -> {
+                    xPositionChanged = true
+                    oldXPosition = mImageView.x
+                    newXPosition = progress.toFloat()
+                    val newText = "${resources.getString(R.string.textView_text_xPosition)} $newXPosition"
+                    xPositionTextView.text = newText
 
-            }
-            R.id.yPositionSeekBar -> {
-                yPositionChanged = true
-                oldYPosition = mImageView.y
-                newYPosition = progress.toFloat()
-                val newText = "Y Position $newYPosition"
-                yPositionTextView.text = newText
+                }
+                R.id.yPositionSeekBar -> {
+                    yPositionChanged = true
+                    oldYPosition = mImageView.y
+                    newYPosition = progress.toFloat()
+                    val newText = "${resources.getString(R.string.textView_text_yPosition)} $newYPosition"
+                    yPositionTextView.text = newText
+                }
             }
         }
     }
 
-    override fun onStartTrackingTouch(seekBar: SeekBar?) {
+    override fun onStartTrackingTouch(seekBar: SeekBar?) { }
 
-    }
-
-    override fun onStopTrackingTouch(seekBar: SeekBar?) {
-
-    }
+    override fun onStopTrackingTouch(seekBar: SeekBar?) { }
 
     fun startButtonClicked(view: View) {
         when (view.id) {
@@ -175,4 +179,6 @@ class MainActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
             }
         }
     }
+
+
 }

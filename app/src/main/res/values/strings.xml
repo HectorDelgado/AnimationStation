@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Animation Station</string>
+
+    <string name="imageView_contentDescription_mainImage">Main Image</string>
+    <string name="textView_text_alpha">Alpha</string>
+    <string name="textView_text_rotation">Rotation</string>
+    <string name="textView_text_scale">Scale</string>
+    <string name="textView_text_xPosition">X Position</string>
+    <string name="textView_text_yPosition">Y Position</string>
+    <string name="button_text_animateMe">Animate Me</string>
 </resources>
